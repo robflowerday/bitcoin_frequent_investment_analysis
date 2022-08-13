@@ -65,9 +65,9 @@ plt.title("Hour of Day Analysis, 4+ Years of Data")
 plt.show()
 
 # Limit data to the last year and repeat the analysis.
-df = df[:365*24]
-ax = sns.violinplot(x="hour of day", y="norm day price", data=df)
-plt.title("Day of Week Analysis, 1 Year of Data")
+small_df = df[:365*24]
+ax = sns.violinplot(x="hour of day", y="norm day price", data=small_df)
+plt.title("Hour of Day Analysis, 1 Year of Data")
 plt.show()
 
 
@@ -86,7 +86,7 @@ for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", 
     plt.title(f"Hour of Day Analysis - {day}, 4+ Years of Data")
     plt.show()
 
-    filtered_df = filtered_df[:52*24]
+    filtered_df = filtered_df.iloc[:1248]
     ax = sns.violinplot(x="hour of day", y="norm day price", data=filtered_df)
     plt.title(f"Hour of Day Analysis - {day}, 1 Year of Data")
     plt.show()
