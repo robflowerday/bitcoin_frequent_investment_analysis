@@ -32,13 +32,13 @@ df["Norm week price"] = (df["Price"] - df[("Price", "min")]) / (df[("Price", "ma
 # Show which days of the week most frequently have the highest and lowest bitcoin prices with a violin plot.
 ax = sns.violinplot(x="Day of week", y="Norm week price", data=df)
 plt.title("Day of Week Analysis, 10 Years of Data")
-# plt.show()
+plt.show()
 
 # Limit data to the last year and repeat the analysis.
 df = df[:365]
 ax = sns.violinplot(x="Day of week", y="Norm week price", data=df)
 plt.title("Day of Week Analysis, 1 Year of Data")
-# plt.show()
+plt.show()
 
 
 # Hour of day analysis.
